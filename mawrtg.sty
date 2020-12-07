@@ -1,0 +1,91 @@
+%%% ===================================================================
+%%% TeX-style-file{
+%%%     author      = "Tom M. Ragonneau",
+%%%     version     = "1.0.0",
+%%%     date        = "December 7, 2020",
+%%%     filename    = "mawrtg.sty",
+%%%     address     = "Department of Applied Mathematics
+%%%                    The Hong Kong Polytechnic University
+%%%                    Hung Hom, Kowloon, Hong Kong",
+%%%     telephone   = "(+852) 6995 7651",
+%%%     FAX         = "",
+%%%     checksum    = "",
+%%%     email       = "tom.ragonneau [at] connect.polyu.hk",
+%%%     codetable   = "ISO/ASCII",
+%%%     keywords    = "mathematical writing, LaTeX, T. M. Ragonneau",
+%%%     supported   = "yes",
+%%%     docstring   = "Mathematical writing styles for LaTeX"
+%%% }
+%%% ===================================================================
+%%% The latest version of this file is available at
+%%%
+%%%     https://github.com/ragonneau/mawrtg.
+%%%
+%%% The mathematical commands are largely excerpted from
+%%%
+%%%     N. J. Higham. Handbook of Writing for the Mathematical
+%%%     Sciences. SIAM, Philadelphia, PA, third edition, 2020.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mawrtg}[2020/12/04 v1.0.0]
+\def\mk@pkgname{mawrtg}
+
+% The 'review' option shows some drafting information on the document.
+\newif\if@review
+\@reviewfalse
+\DeclareOption{review}{\@reviewtrue}
+\ProcessOptions\relax
+
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{mathtools}
+\RequirePackage{xcolor}
+\if@review
+	\RequirePackage{showlabels}
+	\definecolor{review}{HTML}{43A047}
+    \renewcommand{\showlabelfont}{\small\slshape\color{review}}
+\fi
+
+% US English hyphenation exception
+\makeatletter
+\@input{ushyphex}
+\makeatother
+
+% Colorization for cross-referencing commands
+\RequirePackage{hyperref}
+\RequirePackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black!50!red,
+    citecolor=black!50!blue,
+    urlcolor=black!50!blue
+}
+
+% Search path for graphics
+\RequirePackage{graphicx}
+\graphicspath{{figs/}}
+
+% Mathematical constants, sets, and functions
+\def\eu{\ensuremath{\mathrm{e}}}    % number 'e'
+\def\iu{\ensuremath{\mathrm{i}}}    % imaginary unit
+\def\du{\ensuremath{\mathrm{d}}}    % differential operator
+\def\R{\ensuremath{\mathbb{R}}}		% set of real numbers
+\def\Q{\ensuremath{\mathbb{Q}}}		% set of rational numbers
+\def\N{\ensuremath{\mathbb{N}}}		% set of natural numbers
+\def\Z{\ensuremath{\mathbb{Z}}}		% set of integers
+
+% Mathematical operators
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\diag}{diag}
+
+% Mathematical macros
+\newcommand{\norm}[1]{\|#1\|}
+
+% Fine-tuning spacing in formulas
+% Built-in spaces are \; (thick), \: (medium), \, (thin), \! (negative
+% thin), \quad (printer's quad), and \qquad (double printer's quad).
+% Some other TeX commands that are useful are \phantom, \vphantom,
+% \mathstrut, \hphantom and \smash.
+% Make @ behave as per catcode 13 (active). The TeXbook, p. 155.
+\mathcode`@="8000{\catcode`\@=\active\gdef@{\mkern1mu}}

@@ -1,0 +1,32 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{lmodern}
+
+\usepackage[style=authoryear]{biblatex}
+\setlength\bibitemsep{\itemsep}
+\addbibresource{strings.bib}
+\addbibresource{refopt.bib}
+
+\usepackage[review]{mawrtg}
+
+\title{Style sheet \texttt{mawrtg.sty}}
+\author{Tom M. Ragonneau%
+    \thanks{%
+        Department of Applied Mathematics,
+        The Hong Kong Polytechnic University,
+        Hung Hom, Kowloon, Hong Kong
+        (\texttt{tom.ragonneau@connect.polyu.hk},
+        \url{https://www.tom-ragonneau.co/}).
+    }
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\nocite{*}
+\printbibliography
+
+\end{document}
