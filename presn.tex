@@ -1,0 +1,68 @@
+\documentclass{beamer}
+% Requires to be compiled with XeLaTeX
+
+% Beamer 'Metropolis' theme and general templates
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{frame numbering}{%
+    \insertframenumber\,/\,\inserttotalframenumber%
+}
+\setbeamertemplate{bibliography item}[triangle]
+\def\titlepage{\usebeamertemplate{title page}}
+\metroset{block=fill}
+
+% Removing extra-indentation of itemize/enumeration environments
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+
+% Unnumbered appendix and references
+\usepackage{appendixnumberbeamer}
+\usepackage[style=authoryear-comp]{biblatex}
+\addbibresource{strings.bib}
+\addbibresource{refopt.bib}
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+
+\usepackage{mawrtg}
+
+\title{Beamer template}
+\subtitle{Based on the \textbf{\textsc{metropolis}} theme}
+\date{\today}
+\author{Tom M. Ragonneau}
+\institute{%
+    Department of Applied Mathematics,
+    The Hong Kong Polytechnic University
+}
+\titlegraphic{}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}[fragile]{Title}
+    \nocite{*}
+    \begin{block}{Default}
+        Block content.
+    \end{block}
+
+    \begin{alertblock}{Alert}
+        Block content.
+    \end{alertblock}
+
+    \begin{exampleblock}{Example}
+        Block content.
+    \end{exampleblock}
+\end{frame}
+
+\appendix
+
+\begin{frame}[fragile,t,allowframebreaks]{References}
+    \printbibliography[heading=none]
+\end{frame}
+
+\end{document}
