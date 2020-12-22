@@ -1,8 +1,8 @@
 %%% ===================================================================
 %%% TeX-style-file{
 %%%     author      = "Tom M. Ragonneau",
-%%%     version     = "1.0.0",
-%%%     date        = "December 7, 2020",
+%%%     version     = "1.0.3",
+%%%     date        = "December 20, 2020",
 %%%     filename    = "mawrtg.sty",
 %%%     address     = "Department of Applied Mathematics
 %%%                    The Hong Kong Polytechnic University
@@ -27,23 +27,43 @@
 %%%     Sciences. SIAM, Philadelphia, PA, third edition, 2020.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mawrtg}[2020/12/04 v1.0.0]
+\ProvidesPackage{mawrtg}[2020/12/04 v1.0.3]
 \def\mk@pkgname{mawrtg}
 
-% The 'review' option shows some drafting information on the document.
-\newif\if@review
-\@reviewfalse
+% The 'review' option shows some drafting information on the document
+\newif\if@review\@reviewfalse
 \DeclareOption{review}{\@reviewtrue}
-\ProcessOptions\relax
+
+% The 'color' option uses colorization for links, references, etc
+\newif\ifmawrtg@color\mawrtg@colorfalse
+\DeclareOption{color}{\mawrtg@colortrue}
+\DeclareOption*{\OptionNotUsed}
+\ProcessOptions*\relax
 
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
-\RequirePackage{mathtools}
 \RequirePackage{xcolor}
+\@ifclassloaded{beamer}{%
+    \RequirePackage{unicode-math}
+}{%
+    \RequirePackage{mathtools}
+}
 \if@review
-	\RequirePackage{showlabels}
-	\definecolor{review}{HTML}{43A047}
-    \renewcommand{\showlabelfont}{\small\slshape\color{review}}
+    \RequirePackage{showlabels}
+    \definecolor{reviewcolor}{HTML}{43A047}
+    \renewcommand{\showlabelfont}{\small\slshape\color{reviewcolor}}
+\fi
+
+% Colorization for cross-referencing commands
+\RequirePackage{hyperref}
+\RequirePackage{url}
+\ifmawrtg@color
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=black!50!red,
+        citecolor=black!50!blue,
+        urlcolor=black!50!blue
+    }
 \fi
 
 % US English hyphenation exception
@@ -51,28 +71,19 @@
 \@input{ushyphex}
 \makeatother
 
-% Colorization for cross-referencing commands
-\RequirePackage{hyperref}
-\RequirePackage{url}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black!50!red,
-    citecolor=black!50!blue,
-    urlcolor=black!50!blue
-}
-
 % Search path for graphics
 \RequirePackage{graphicx}
-\graphicspath{{figs/}}
+\graphicspath{{figs/}{imgs/}}
 
 % Mathematical constants, sets, and functions
 \def\eu{\ensuremath{\mathrm{e}}}    % number 'e'
 \def\iu{\ensuremath{\mathrm{i}}}    % imaginary unit
 \def\du{\ensuremath{\mathrm{d}}}    % differential operator
-\def\R{\ensuremath{\mathbb{R}}}		% set of real numbers
-\def\Q{\ensuremath{\mathbb{Q}}}		% set of rational numbers
-\def\N{\ensuremath{\mathbb{N}}}		% set of natural numbers
-\def\Z{\ensuremath{\mathbb{Z}}}		% set of integers
+\def\R{\ensuremath{\mathbb{R}}}     % set of real numbers
+\def\Q{\ensuremath{\mathbb{Q}}}     % set of rational numbers
+\def\N{\ensuremath{\mathbb{N}}}     % set of natural numbers
+\def\Z{\ensuremath{\mathbb{Z}}}     % set of integers
+\def\trps{\ensuremath{\rm T}}       % transpose function
 
 % Mathematical operators
 \DeclareMathOperator*{\argmax}{arg\,max}
@@ -80,7 +91,11 @@
 \DeclareMathOperator{\diag}{diag}
 
 % Mathematical macros
-\newcommand{\norm}[1]{\|#1\|}
+\def\eqdef{\ensuremath{\overset{\rm def}{=}}}
+\newcommand{\abs}[2][]{#1|#2#1|}
+\newcommand{\norm}[2][]{#1\|#2#1\|}
+\newcommand{\set}[2][]{#1\{#2#1\}}
+\newcommand{\inner}[3][]{#1\langle#2,#3#1\rangle}
 
 % Fine-tuning spacing in formulas
 % Built-in spaces are \; (thick), \: (medium), \, (thin), \! (negative
