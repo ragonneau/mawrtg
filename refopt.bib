@@ -1,8 +1,8 @@
 %%% ===================================================================
 %%% BibTeX-file{
 %%%     author      = "Tom M. Ragonneau",
-%%%     version     = "1.0.0",
-%%%     date        = "December 2, 2020",
+%%%     version     = "1.0.1",
+%%%     date        = "December 22, 2020",
 %%%     filename    = "refopt.bib",
 %%%     address     = "Department of Applied Mathematics
 %%%                    The Hong Kong Polytechnic University
@@ -31,23 +31,119 @@
 %%%    https://github.com/higham/njhigham-bib
 %%%    (or http://www.maths.manchester.ac.uk/~higham/papers).
 
-@incollection{pow78,
+@incollection{gmsw92,
+    author          = "P. E. Gill and W. Murray and M. A. Saunders and
+                       M. H. Wright",
+    title           = "Some theoretical properties of an augmented
+                       {Lagrangian} merit function",
+    booktitle       = "Advances in Optimization and Parallel
+                       Computing",
+    editor          = "P. M. Pardalos",
+    publisher       = pub-NH,
+    address         = pub-NH:adr,
+    pages           = "101--128",
+    year            = 1992,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@article{han76,
+    author          = "S. P. Han",
+    title           = "Superlinearly convergent variable metric
+                       algorithms for general nonlinear programming
+                       problems",
+    journal         = j-MP,
+    volume          = 11,
+    _number         = 1,
+    pages           = "263--282",
+    year            = 1976,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@article{han77,
+    author          = "S. P. Han",
+    title           = "A globally convergent method for nonlinear
+                       programming",
+    journal         = j-JOTA,
+    volume          = 22,
+    _number         = 3,
+    pages           = "297--309",
+    year            = 1977,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@article{hest69,
+    author          = "M. R. Hestenes",
+    title           = "Multiplier and gradient methods",
+    journal         = j-JOTA,
+    volume          = 4,
+    _number         = 5,
+    pages           = "303--320",
+    year            = 1969,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@incollection{powe69,
+    author          = "M. J. D. Powell",
+    title           = "A method for nonlinear constraints in
+                       minimization problems",
+    booktitle       = "Optimization",
+    editor          = "R. Fletcher",
+    publisher       = pub-AP,
+    address         = pub-AP:adr-NY,
+    pages           = "283--298",
+    year            = 1969,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@incollection{powe78a,
+    author          = "M. J. D. Powell",
+    title           = "A fast algorithm for nonlinearly constrained
+                       optimization calculations",
+    booktitle       = "Numerical Analysis",
+    editor          = "G. A. Watson",
+    publisher       = pub-Springer,
+    address         = pub-Springer:adr-B,
+    pages           = "144--157",
+    year            = 1978,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@article{powe78b,
+    author          = "M. J. D. Powell",
+    title           = "Algorithms for nonlinear constraints that use
+                       {Lagrangian} functions",
+    journal         = j-MP,
+    volume          = 14,
+    _number         = 1,
+    pages           = "224--248",
+    year            = 1978,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@incollection{powe78c,
     author          = "M. J. D. Powell",
     title           = "The convergence of variable metric methods for
                        nonlinearly constrained optimization
                        calculations",
     booktitle       = "Nonlinear Programming 3",
-    editor          = "O. L. Mangasarian and R. R. Meyer
-                       and S. M. Robinson",
+    editor          = "O. L. Mangasarian and R. R. Meyer and S. M.
+                       Robinson",
     publisher       = pub-AP,
     address         = pub-AP:adr-NY,
     pages           = "27--63",
     year            = 1978,
     _created        = "2020.12.02",
-    _updated        = "2020.12.02"
+    _updated        = "2020.12.22"
 }
 
-@incollection{pow94,
+@incollection{powe94,
     author          = "M. J. D. Powell",
     title           = "A direct search optimization method that models
                        the objective and constraint functions by linear
@@ -56,14 +152,14 @@
                        Analysis",
     editor          = "S. Gomez and J. P. Hennart",
     publisher       = pub-Springer,
-    address         = pub-Springer:adr-NL,
+    address         = pub-Springer:adr-D,
     pages           = "51--67",
     year            = 1994,
     _created        = "2020.12.02",
     _updated        = "2020.12.02"
 }
 
-@article{pow02,
+@article{powe02,
     author          = "M. J. D. Powell",
     title           = "{UOBYQA}: unconstrained optimization by
                        quadratic approximation",
@@ -76,7 +172,7 @@
     _updated        = "2020.12.02"
 }
 
-@article{pow04a,
+@article{powe04a,
     author          = "M. J. D. Powell",
     title           = "Least {Frobenius} norm updating of quadratic
                        models that satisfy interpolation conditions",
@@ -89,7 +185,7 @@
     _updated        = "2020.12.02"
 }
 
-@incollection{pow04b,
+@incollection{powe04b,
     author          = "M. J. D. Powell",
     title           = "On updating the inverse of a {KKT} matrix",
     booktitle       = "Numerical Linear Algebra and Optimization",
@@ -102,7 +198,7 @@
     _updated        = "2020.12.02"
 }
 
-@incollection{pow06,
+@incollection{powe06,
     author          = "M. J. D. Powell",
     title           = "The {NEWUOA} software for unconstrained
                        optimization without derivatives",
@@ -116,7 +212,7 @@
     _updated        = "2020.12.02"
 }
 
-@article{pow08,
+@article{powe08,
     author          = "M. J. D. Powell",
     title           = "Developments of {NEWUOA} for minimization
                        without derivatives",
@@ -129,7 +225,7 @@
     _updated        = "2020.12.02"
 }
 
-@techreport{pow09,
+@techreport{powe09,
     author          = "M. J. D. Powell",
     title           = "The {BOBYQA} algorithm for bound constrained
                        optimization without derivatives",
@@ -141,7 +237,7 @@
     _updated        = "2020.12.02"
 }
 
-@article{pow15,
+@article{powe15,
     author          = "M. J. D. Powell",
     title           = "On fast trust region methods for quadratic
                        models with linear constraints",
@@ -152,4 +248,56 @@
     year            = 2015,
     _created        = "2020.12.02",
     _updated        = "2020.12.02"
+}
+
+@article{rock73,
+    author          = "R. T. Rockafellar",
+    title           = "The multiplier method of {Hestenes} and {Powell}
+                       applied to convex programming",
+    journal         = j-JOTA,
+    volume          = 12,
+    _number         = 6,
+    pages           = "555--562",
+    year            = 1969,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@article{schi81,
+    author          = "K. Schittkowski",
+    title           = "The nonlinear programming method of {Wilson},
+                       {Han} and {Powell} with an augmented
+                       {Lagrangian} type line search function",
+    journal         = j-NM,
+    volume          = 38,
+    _number         = 1,
+    pages           = "83--114",
+    year            = 1981,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+@article{schi83,
+    author          = "K. Schittkowski",
+    title           = "On the convergence of a sequential quadratic
+                       programming method with an augmented
+                       {Lagrangian} line search function",
+    journal         = j-OPT,
+    volume          = 14,
+    _number         = 2,
+    pages           = "197--216",
+    year            = 1983,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
+}
+
+
+@phdthesis{wils63,
+    author          = "R. B. Wilson",
+    title           = "A simplicial algorithm for concave programming",
+    school          = inst-HBS,
+    address         = inst-HBS:adr,
+    year            = 1963,
+    _created        = "2020.12.22",
+    _updated        = "2020.12.22"
 }
